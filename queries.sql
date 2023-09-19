@@ -1,3 +1,4 @@
+-- Active: 1695058512420@@127.0.0.1@5432@postgres
 /*Queries that provide answers to the questions from all projects.*/
 
 -- Find all animals whose name ends in "mon".
@@ -50,10 +51,10 @@ SELECT * FROM animals; -- Verification
 COMMIT; -- Commit transaction
 
 -- Analytical queries
-SELECT COUNT(*) FROM animals; -- How many animals are there?
+SELECT COUNT(*) AS total_animals FROM animals; -- How many animals are there?
 SELECT COUNT(*) FROM animals WHERE escape_attempts = 0; -- Animals that have never attempted to escape
-SELECT AVG(weight_kg) FROM animals; -- Average weight of animals
+SELECT AVG(weight_kg) AS average_weight FROM animals; -- Average weight of animals
 SELECT neutered, COUNT(*) FROM animals GROUP BY neutered; -- Who escapes the most, castrated animals or not?
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species; -- Minimum and maximum weight of each type of animal
-SELECT AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'; -- Average number of escape attempts by type of animal born between 1990 and 2000
+SELECT AVG(escape_attempts) AS avg_escape FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'; -- Average number of escape attempts by type of animal born between 1990 and 2000
 
