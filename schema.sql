@@ -1,10 +1,17 @@
-/* Database schema to keep the structure of entire database. */
+/* Database schema to keep the structure of the entire database. */
 
+-- Create the vet_clinic database
+CREATE DATABASE vet_clinic;
+-- Create the animals' table
 CREATE TABLE animals (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    date_of_birth DATE,
-    escape_attempts INTEGER,
-    neutered BOOLEAN,
-    weight_kg DECIMAL
+  id INT PRIMARY KEY,
+  name VARCHAR(255),
+  date_of_birth DATE,
+  escape_attempts INTEGER,
+  neutered BOOLEAN,
+  weight_kg DECIMAL
 );
+-- Modify your schema.sql file.
+--Add a column species of type string to your animals table.
+ALTER TABLE animals
+ADD COLUMN species VARCHAR(255)
