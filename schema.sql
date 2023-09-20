@@ -11,7 +11,29 @@ CREATE TABLE animals (
   neutered BOOLEAN,
   weight_kg DECIMAL
 );
--- Modify your schema.sql file.
---Add a column species of type string to your animals table.
+
 ALTER TABLE animals
-ADD COLUMN species VARCHAR(255)
+ADD COLUMN owner_id INT,
+ADD CONSTRAINT fk_owner
+  FOREIGN KEY (owner_id)
+  REFERENCES owners (id);
+
+ALTER TABLE animals
+ADD COLUMN species_id INT,
+ADD CONSTRAINT fk_species
+  FOREIGN KEY (species_id)
+  REFERENCES species (id);
+
+
+-- The owners table pg_create_restore_point
+CREATE TABLE owners (
+  id SERIAL PRIMARY KEY,
+  full_name VARCHAR(255),
+  age INTEGER
+);
+
+-- Create the species TABLE
+CREATE TABLE species (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255)
+);
