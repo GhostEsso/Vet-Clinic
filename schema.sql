@@ -38,3 +38,26 @@ CREATE TABLE species (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100)
 );
+
+-- Create the vets table
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    age INTEGER,
+    date_of_graduation DATE
+);
+
+-- create the specializations TABLE
+CREATE TABLE specializations (
+    vets_id INTEGER REFERENCES vets(id),
+    species_id INTEGER REFERENCES species(id),
+    PRIMARY KEY (vets_id, species_id)
+);
+
+-- Create the visits TABLE
+CREATE TABLE visits (
+    animal_id INTEGER REFERENCES animals(id),
+    vet_id INTEGER REFERENCES vets(id),
+    visit_date DATE,
+    PRIMARY KEY (animal_id, vet_id, visit_date)
+);
