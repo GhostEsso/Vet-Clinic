@@ -55,9 +55,19 @@ CREATE TABLE specializations (
 );
 
 -- Create the visits TABLE
-CREATE TABLE visits (
-    animal_id INTEGER REFERENCES animals(id),
-    vet_id INTEGER REFERENCES vets(id),
-    visit_date DATE,
-    PRIMARY KEY (animal_id, vet_id, visit_date)
+CREATE TABLE visits(
+animal_id INT,
+vet_id INT,
+date_of_visits DATE,
+CONSTRAINT fk_animals
+FOREIGN KEY(animal_id)
+REFERENCES animals(id),
+CONSTRAINT fk_vets
+FOREIGN KEY(vet_id)
+REFERENCES vets(id)
 );
+
+-- Performance Database
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
