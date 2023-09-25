@@ -182,8 +182,14 @@ GROUP BY s.name
 ORDER BY COUNT(*) DESC
 LIMIT 1;
 
+-- Performance QUERIES
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4; 
+explain analyze SELECT * FROM visits where vet_id = 2;
+explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
+
 -- Applying Index to visits
 explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
 explain analyze SELECT * FROM visits where vet_id = 2;
 explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
 explain analyze SELECT * FROM Denom where vet_id = 2;
+
