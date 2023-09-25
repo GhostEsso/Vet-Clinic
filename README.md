@@ -95,6 +95,12 @@ Clone this repository to your desired folder:
 - Twitter: [@TambanaEssohanam](https://twitter.com/TambanaEssohana)
 - LinkedIn: [@TambanaEssohanam](https://www.linkedin.com/in/essohanam-tambana/)
 
+👤 **Nelofar Zabi**
+
+- GitHub: [@githubhandle](https://github.com/Nelofarzabi)
+- Twitter: [@twitterhandle](https://twitter.com/NelofarZabi)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nelofar-zabi-1a1066213)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->

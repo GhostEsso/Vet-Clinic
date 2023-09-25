@@ -55,9 +55,43 @@ CREATE TABLE specializations (
 );
 
 -- Create the visits TABLE
-CREATE TABLE visits (
-    animal_id INTEGER REFERENCES animals(id),
-    vet_id INTEGER REFERENCES vets(id),
-    visit_date DATE,
-    PRIMARY KEY (animal_id, vet_id, visit_date)
+CREATE TABLE visits(
+animal_id INT,
+vet_id INT,
+date_of_visits DATE,
+CONSTRAINT fk_animals
+FOREIGN KEY(animal_id)
+REFERENCES animals(id),
+CONSTRAINT fk_vets
+FOREIGN KEY(vet_id)
+REFERENCES vets(id)
 );
+
+-- Performance Database
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Drop previous visits table and recreated
+DROP TABLE visits;
+
+CREATE TABLE visits(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  animal_id INT REFERENCES animals(id),
+  vet_id INT REFERENCES vets(id),
+  date_of_visits DATE,
+  PRIMARY KEY(id)
+);
+
+CREATE INDEX vet_id_index ON visits (vet_id DESC);
+CREATE INDEX animal_id_index ON visits (animal_id);
+CREATE INDEX owners_indexs ON owners(email DESC);
+CREATE INDEX Denom_index ON Denom (vet_id ASC);
+
+-- Denormalize TABLE
+CREATE TABLE Denom (
+    id INT,
+    animal_id INT,
+    vet_id INT,
+    date_of_visit DATE,
+    PRIMARY KEY(id)
+)
