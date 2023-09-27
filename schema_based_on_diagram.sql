@@ -16,3 +16,11 @@ CREATE TABLE treatments (
     type VARCHAR(50),
     name VARCHAR(50)
 );
+
+CREATE TABLE invoices (
+    id SERIAL PRIMARY KEY,
+    total_amount DECIMAL , 
+    generated_at TIMESTAMP,
+    payed_at TIMESTAMP, 
+    medical_historY_id FOREIGN KEY 
+);
