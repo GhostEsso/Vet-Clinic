@@ -11,3 +11,8 @@ CREATE TABLE medical_histories (
     status VARCHAR(20)
 );
 
+CREATE TABLE treatments (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR(50),
+    name VARCHAR(50)
+);
