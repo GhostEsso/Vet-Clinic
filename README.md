@@ -49,7 +49,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 Use schema.sql to create all tables.
 Use data.sql to populate tables with sample data.
-Check queries.sql for examples of queries that can be run on a newly created database. Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!
+Check queries.sql for examples of queries that can be run on a newly created database. Important note: this file might include queries that make changes in the database (e.g., remove records). 
+
+Find the visual representation of the database inside the folder :
+![Alt text](<drawSQL-vet-clinic-export-2023-09-26 (1).png>)
+
+Use them responsibly!
 
 ### Prerequisites
 
