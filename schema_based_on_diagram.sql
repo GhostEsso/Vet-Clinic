@@ -24,3 +24,12 @@ CREATE TABLE invoices (
     payed_at TIMESTAMP, 
     medical_historY_id FOREIGN KEY 
 );
+
+CREATE TABLE invoice_items (
+    id SERIAL PRIMARY KEY,
+    unit_price DECIMAL,
+    quantity INTEGER,
+    total_price DECIMAL,
+    invoice_id FOREIGN KEY,
+    treatment_id FOREIGN KEY
+);
